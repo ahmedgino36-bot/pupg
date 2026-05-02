@@ -110,52 +110,72 @@ video {
 <p>نخبة لاعبي الـ E-Sports 🔥</p>
 
 <nav>
+<a href="#features">المميزات</a>
 <a href="#leaderboard">الترتيب</a>
 <a href="#apply">التقديم</a>
 </nav>
 
 </header>
 
-<!-- 🎥 INTRO VIDEO -->
+<!-- 🎬 الفيديو -->
 <section>
 <h2>🎬 Intro</h2>
-<video controls autoplay muted>
-<source src="M7.mp4" type="video/mp4">
+<video controls autoplay muted loop>
+    <source src="M7.mp4" type="video/mp4">
 </video>
 </section>
 
-<!-- 📊 LEADERBOARD -->
+<!-- 💪 المميزات -->
+<section id="features">
+<h2>💪 مميزات الكلان</h2>
+
+<div class="card">خبرة أكثر من عامين في مجال الـ E-Sports</div>
+<div class="card">المشاركة في الاسكريمات بشكل يومي</div>
+<div class="card">مسابقات أسبوعية بين أعضاء الكلان</div>
+<div class="card">إدارة منظمة واحترافية</div>
+<div class="card">تدريب لتحسين مستوى اللاعبين</div>
+<div class="card">بيئة تنافسية قوية</div>
+
+</section>
+
+<!-- 📊 الترتيب -->
 <section id="leaderboard">
 <h2>📊 ترتيب اللاعبين</h2>
 
 <div class="card">🥇 5586943854 - 【M7】SONIC¹ (Leader)</div>
-<div class="card">🥈 5286443964 - 【M7】ICE¹</div>
-<div class="card">🥉 5901651760 - 【M7】XaVI</div>
+<div class="card">🥈 5286443964 - 【M7】ICE¹ (Co-Leader)</div>
 
 <p class="small-text">ORG SASA & GINO</p>
 
 </section>
 
-<!-- 📝 APPLY -->
+<!-- 📝 التقديم -->
 <section id="apply">
 <h2>📝 التقديم</h2>
+
 <div class="card">
 <form id="form">
+
 <input type="text" id="id" placeholder="ID" required><br><br>
 <input type="text" id="name" placeholder="اسم الحساب" required><br><br>
 <input type="text" id="real" placeholder="اسمك" required><br><br>
 <input type="number" id="age" placeholder="السن" required><br><br>
 <input type="text" id="phone" placeholder="رقمك" required><br><br>
+
 <select id="device">
 <option>موبايل</option>
 <option>آيباد</option>
 <option>محاكي</option>
 </select><br><br>
+
 <input type="number" id="fps" placeholder="FPS"><br><br>
 <input type="number" id="years" placeholder="سنين اللعب"><br><br>
+
 <button type="submit">إرسال</button>
+
 </form>
 </div>
+
 </section>
 
 <script>
@@ -163,9 +183,20 @@ let phoneNumber = "201129730283";
 
 document.getElementById("form").addEventListener("submit", function(e){
  e.preventDefault();
- let msg = `🔥 M7 ESPORTS طلب 🔥\n\nID: ${id.value}\nName: ${name.value}\nReal: ${real.value}\nAge: ${age.value}\nPhone: ${phone.value}\nDevice: ${device.value}\nFPS: ${fps.value}\nYears: ${years.value}`;
- let url = "https://wa.me/"+phoneNumber+"?text="+encodeURIComponent(msg);
- window.open(url,"_blank");
+
+ let msg = `🔥 M7 ESPORTS طلب 🔥\n\n` +
+ `ID: ${id.value}\n` +
+ `Name: ${name.value}\n` +
+ `Real: ${real.value}\n` +
+ `Age: ${age.value}\n` +
+ `Phone: ${phone.value}\n` +
+ `Device: ${device.value}\n` +
+ `FPS: ${fps.value}\n` +
+ `Years: ${years.value}`;
+
+ let url = "https://wa.me/" + phoneNumber + "?text=" + encodeURIComponent(msg);
+
+ window.open(url, "_blank");
 });
 </script>
 
