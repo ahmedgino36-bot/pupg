@@ -1,6 +1,3 @@
-<!-- M7 ESPORTS FULL WEBSITE (PRO VERSION) -->
-<!-- You can split this into separate files later: index.html, features.html, achievements.html, apply.html, leaderboard.html -->
-
 <!DOCTYPE html>
 <html lang="ar">
 <head>
@@ -9,34 +6,32 @@
 <title>M7 ESPORTS</title>
 
 <style>
-/* ===== GLOBAL ===== */
 body {
     margin: 0;
     font-family: Arial;
-    background: black;
+    background: url("bg.jpg") no-repeat center center/cover;
     color: white;
     text-align: center;
-    overflow-x: hidden;
 }
 
-/* ===== ANIMATED BACKGROUND ===== */
-.background {
+.overlay {
+    background: rgba(0,0,0,0.7);
     position: fixed;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle, #001a1a, black);
+    top: 0;
+    left: 0;
     z-index: -1;
-    animation: moveBg 10s infinite alternate;
 }
 
-@keyframes moveBg {
-    0% {filter: hue-rotate(0deg);}
-    100% {filter: hue-rotate(60deg);}
-}
-
-/* ===== HEADER ===== */
 header {
     padding: 30px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {opacity:0; transform:translateY(-30px);} 
+    to {opacity:1; transform:translateY(0);} 
 }
 
 .logo {
@@ -51,11 +46,6 @@ h1 {
     text-shadow: 0 0 10px #00ffcc, 0 0 30px #00ffcc;
 }
 
-p {
-    color: #bbb;
-}
-
-/* ===== NAV ===== */
 nav a {
     display: inline-block;
     margin: 8px;
@@ -64,18 +54,11 @@ nav a {
     border-radius: 10px;
     color: white;
     text-decoration: none;
-    transition: 0.3s;
 }
 
-nav a:hover {
-    background: #00ffcc;
-    color: black;
-}
-
-/* ===== BUTTON ===== */
 button {
     padding: 15px 30px;
-    margin-top: 20px;
+    margin: 10px;
     background: #00ffcc;
     border: none;
     font-size: 16px;
@@ -84,11 +67,6 @@ button {
     font-weight: bold;
 }
 
-button:hover {
-    background: white;
-}
-
-/* ===== SECTIONS ===== */
 section {
     padding: 40px;
 }
@@ -102,106 +80,93 @@ section {
     box-shadow: 0 0 10px #00ffcc33;
 }
 
+.small-text {
+    font-size: 14px;
+    color: #aaa;
+    margin-top: 20px;
+}
+
+video {
+    width: 80%;
+    max-width: 600px;
+    margin-top: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px #00ffcc;
+}
+
+@media (max-width: 600px) {
+    h1 {font-size: 30px;}
+    .logo {width: 100px;}
+}
 </style>
 </head>
 
 <body>
+<div class="overlay"></div>
 
-<div class="background"></div>
-
-<!-- ===== HOME ===== -->
 <header>
 <img src="logo.jpg" class="logo">
 <h1>M7 ESPORTS</h1>
-<p>نخبة لاعبي الـ E-Sports الاحترافيين 🔥</p>
+<p>نخبة لاعبي الـ E-Sports 🔥</p>
 
 <nav>
-<a href="#features">المميزات</a>
-<a href="#achievements">الإنجازات</a>
 <a href="#leaderboard">الترتيب</a>
 <a href="#apply">التقديم</a>
 </nav>
 
-<br>
-<a href="#apply"><button>انضم الآن</button></a>
 </header>
 
-<!-- ===== FEATURES ===== -->
-<section id="features">
-<h2>💪 مميزات الكلان</h2>
-<div class="card">خبرة أكثر من عامين في مجال الـ E-Sports</div>
-<div class="card">المشاركة في الاسكريمات بشكل يومي</div>
-<div class="card">مسابقات أسبوعية بين الأعضاء</div>
-<div class="card">تدريبات احترافية لتحسين المستوى</div>
-<div class="card">روح فريق قوية وتعاون عالي</div>
+<!-- 🎥 INTRO VIDEO -->
+<section>
+<h2>🎬 Intro</h2>
+<video controls autoplay muted>
+<source src="M7.mp4" type="video/mp4">
+</video>
 </section>
 
-<!-- ===== ACHIEVEMENTS ===== -->
-<section id="achievements">
-<h2>🏆 الإنجازات</h2>
-<div class="card">المركز الأول في عدة بطولات سكريم</div>
-<div class="card">أكثر من 100 فوز جماعي</div>
-<div class="card">مشاركة في بطولات أونلاين قوية</div>
-</section>
-
-<!-- ===== LEADERBOARD ===== -->
+<!-- 📊 LEADERBOARD -->
 <section id="leaderboard">
 <h2>📊 ترتيب اللاعبين</h2>
-<div class="card">🥇 Player 1 - 1200 Points</div>
-<div class="card">🥈 Player 2 - 1100 Points</div>
-<div class="card">🥉 Player 3 - 1000 Points</div>
+
+<div class="card">🥇 5586943854 - 【M7】SONIC¹ (Leader)</div>
+<div class="card">🥈 5286443964 - 【M7】ICE¹</div>
+<div class="card">🥉 5901651760 - 【M7】XaVI</div>
+
+<p class="small-text">ORG SASA & GINO</p>
+
 </section>
 
-<!-- ===== APPLY ===== -->
+<!-- 📝 APPLY -->
 <section id="apply">
-<h2>📝 التقديم للكلان</h2>
+<h2>📝 التقديم</h2>
 <div class="card">
 <form id="form">
-<input type="text" id="id" placeholder="ID الحساب" required><br><br>
+<input type="text" id="id" placeholder="ID" required><br><br>
 <input type="text" id="name" placeholder="اسم الحساب" required><br><br>
-<input type="text" id="real" placeholder="الاسم الحقيقي" required><br><br>
+<input type="text" id="real" placeholder="اسمك" required><br><br>
 <input type="number" id="age" placeholder="السن" required><br><br>
-<input type="text" id="phone" placeholder="رقم الهاتف" required><br><br>
+<input type="text" id="phone" placeholder="رقمك" required><br><br>
 <select id="device">
 <option>موبايل</option>
 <option>آيباد</option>
 <option>محاكي</option>
 </select><br><br>
-<input type="number" id="fps" placeholder="عدد الفريمات"><br><br>
+<input type="number" id="fps" placeholder="FPS"><br><br>
 <input type="number" id="years" placeholder="سنين اللعب"><br><br>
-
-<button type="submit">إرسال عبر واتساب</button>
+<button type="submit">إرسال</button>
 </form>
 </div>
 </section>
 
 <script>
-// WhatsApp send
 let phoneNumber = "201129730283";
 
 document.getElementById("form").addEventListener("submit", function(e){
-    e.preventDefault();
-
-    let msg = `🔥 طلب انضمام M7 ESPORTS 🔥\n\n` +
-    `ID: ${id.value}\n` +
-    `Name: ${name.value}\n` +
-    `Real Name: ${real.value}\n` +
-    `Age: ${age.value}\n` +
-    `Phone: ${phone.value}\n` +
-    `Device: ${device.value}\n` +
-    `FPS: ${fps.value}\n` +
-    `Years: ${years.value}`;
-
-    let url = "https://wa.me/" + phoneNumber + "?text=" + encodeURIComponent(msg);
-
-    window.open(url, "_blank");
+ e.preventDefault();
+ let msg = `🔥 M7 ESPORTS طلب 🔥\n\nID: ${id.value}\nName: ${name.value}\nReal: ${real.value}\nAge: ${age.value}\nPhone: ${phone.value}\nDevice: ${device.value}\nFPS: ${fps.value}\nYears: ${years.value}`;
+ let url = "https://wa.me/"+phoneNumber+"?text="+encodeURIComponent(msg);
+ window.open(url,"_blank");
 });
-
-// OPTIONAL SOUND EFFECT (add click sound file click.mp3)
-// document.body.addEventListener('click', () => {
-//     let audio = new Audio('click.mp3');
-//     audio.play();
-// });
 </script>
 
 </body>
